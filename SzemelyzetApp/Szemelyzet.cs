@@ -17,7 +17,7 @@ namespace SzemelyzetApp
 
         public Szemely Keres(string nev, DateTime szuletes)
         {
-            throw new NotImplementedException();
+            return fonok.Keres(nev, szuletes);
         }
     }
 }

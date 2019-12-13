@@ -27,6 +27,23 @@ namespace SzemelyzetApp
             beosztottak.Add(sz);
         }
 
+        public Szemely Keres(string nev, DateTime szuletes)
+        {
+            if (this.nev.Equals(nev) && this.szuletes.Equals(szuletes))
+            {
+                return this;
+            }
+            foreach (var b in beosztottak)
+            {
+                var keresett = b.Keres(nev, szuletes);
+                if (keresett != null)
+                {
+                    return keresett;
+                }
+            }
+            return null;
+        }
+
         public string Nev => nev;
         public DateTime Szuletes => szuletes;
         public string Beosztas { get => beosztas; set => beosztas = value; }
