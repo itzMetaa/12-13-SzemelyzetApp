@@ -48,12 +48,21 @@ namespace SzemelyzetApp
         {
             get
             {
-                var l = 0;
+                var l = 1;
                 foreach (var b in beosztottak)
                 {
                     l += b.Letszam;
                 }
                 return l;
+            }
+        }
+
+        public void Listazas()
+        {
+            Console.WriteLine(this);
+            foreach (var b in beosztottak)
+            {
+                b.Listazas();
             }
         }
 

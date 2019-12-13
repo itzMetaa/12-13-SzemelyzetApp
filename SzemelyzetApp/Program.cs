@@ -26,6 +26,10 @@ namespace SzemelyzetApp
             Console.WriteLine(keresett);
             Console.WriteLine(szemelyzet.Letszam);
 
+            Console.WriteLine("---------------");
+
+            szemelyzet.Listazas();
+
             Console.ReadLine();
         }
     }

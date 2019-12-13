@@ -22,10 +22,14 @@ namespace SzemelyzetApp
 
         public int Letszam
         {
-            get
-            {
+            get {
                 return fonok.Letszam;
             }
+        }
+
+        internal void Listazas()
+        {
+            fonok.Listazas();            
         }
     }
 }
