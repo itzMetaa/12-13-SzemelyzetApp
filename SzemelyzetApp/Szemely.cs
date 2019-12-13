@@ -6,11 +6,12 @@ using System.Threading.Tasks;
 
 namespace SzemelyzetApp
 {
-    class Szemely
+    class Szemely : IComparable<Szemely>
     {
-        string nev;
+        readonly string nev;
+        readonly DateTime szuletes;
+
         string beosztas;
-        DateTime szuletes;
 
         ISet<Szemely> beosztottak = new SortedSet<Szemely>();
 
@@ -21,6 +22,23 @@ namespace SzemelyzetApp
             this.szuletes = szuletes;
         }
 
+        public void Hozzaad(Szemely sz)
+        {
+            beosztottak.Add(sz);
+        }
 
+        public string Nev => nev;
+        public DateTime Szuletes => szuletes;
+        public string Beosztas { get => beosztas; set => beosztas = value; }
+
+        public int CompareTo(Szemely other)
+        {
+            int i = this.nev.CompareTo(other.nev);
+            if (i != 0)
+            {
+                return i;
+            }
+            return this.szuletes.CompareTo(other.szuletes);
+        }
     }
 }

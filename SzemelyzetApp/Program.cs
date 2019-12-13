@@ -10,8 +10,21 @@ namespace SzemelyzetApp
     {
         static void Main(string[] args)
         {
+            var fonok = new Szemely("Szultán", "szultán", new DateTime(864, 11, 12));
 
+            var szemelyzet = new Szemelyzet(fonok);
 
+            var jazmin = new Szemely("Jázmin", "hercegnő", new DateTime(880, 5, 12));
+            var jafar = new Szemely("Jafar", "főtanácsadó", new DateTime(856, 12, 5));
+            var iago = new Szemely("Iago", "papagáj", new DateTime(881, 1, 1));
+
+            fonok.Hozzaad(jazmin);
+            fonok.Hozzaad(jafar);
+            jafar.Hozzaad(iago);
+
+            Szemely keresett = szemelyzet.Keres("Jafar", new DateTime(856, 12, 5));
+
+            Console.ReadLine();
         }
     }
 }
