@@ -44,6 +44,19 @@ namespace SzemelyzetApp
             return null;
         }
 
+        public int Letszam
+        {
+            get
+            {
+                var l = 0;
+                foreach (var b in beosztottak)
+                {
+                    l += b.Letszam;
+                }
+                return l;
+            }
+        }
+
         public string Nev => nev;
         public DateTime Szuletes => szuletes;
         public string Beosztas { get => beosztas; set => beosztas = value; }
@@ -56,6 +69,11 @@ namespace SzemelyzetApp
                 return i;
             }
             return this.szuletes.CompareTo(other.szuletes);
+        }
+
+        public override string ToString()
+        {
+            return string.Format("{0}, {1}, {2}", nev, beosztas, szuletes);
         }
     }
 }

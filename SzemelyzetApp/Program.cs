@@ -23,6 +23,8 @@ namespace SzemelyzetApp
             jafar.Hozzaad(iago);
 
             Szemely keresett = szemelyzet.Keres("Jafar", new DateTime(856, 12, 5));
+            Console.WriteLine(keresett);
+            Console.WriteLine(szemelyzet.Letszam);
 
             Console.ReadLine();
         }
