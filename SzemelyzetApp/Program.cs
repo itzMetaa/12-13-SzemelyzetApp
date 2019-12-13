@@ -10,6 +10,8 @@ namespace SzemelyzetApp
     {
         static void Main(string[] args)
         {
+
+
         }
     }
 }
